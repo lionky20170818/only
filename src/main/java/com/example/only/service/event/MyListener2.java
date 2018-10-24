@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class MyListener2 implements ApplicationListener<MyEvent> {
     public void onApplicationEvent(MyEvent event)	{
-        log.info(String.format("%s监听到事件源：%s.", MyListener2.class.getName(), event.getSource()));
+        log.info(String.format("%s监听到事件源：%s%s.", MyListener2.class.getName(), event.getSource(), event.getFlag()));
     }
 }
 

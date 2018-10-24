@@ -1,5 +1,6 @@
 package com.example.only.service.event;
 
+import lombok.Data;
 import org.springframework.context.ApplicationEvent;
 
 /**
@@ -9,8 +10,20 @@ import org.springframework.context.ApplicationEvent;
  * Function: 用于
  */
 @SuppressWarnings("serial")
+//@Data
 public class MyEvent extends ApplicationEvent {
-    public MyEvent(Object source){
+    private String flag;
+
+    public MyEvent(Object source, String flag) {
         super(source);
+        this.flag = flag;
+    }
+
+    public String getFlag() {
+        return flag;
+    }
+
+    public void setFlag(String flag) {
+        this.flag = flag;
     }
 }
