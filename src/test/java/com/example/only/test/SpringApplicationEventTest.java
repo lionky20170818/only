@@ -5,8 +5,11 @@ import com.example.only.OnlyApplicationTests;
 import com.example.only.service.event.EventPublisher;
 import com.example.only.service.event.MyEvent;
 import com.example.only.service.event.MyListener2;
+import com.example.only.service.mormal.SalesBillImportFileHandler;
+import com.example.only.service.mormal.UploadHandler;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
@@ -21,6 +24,13 @@ public class SpringApplicationEventTest extends OnlyApplicationTests {
     @Autowired
     private EventPublisher publisher = null;
 
+    @Autowired
+    @Qualifier("DemoUploadHandler")
+    private UploadHandler uploadHandler1 = null;
+    @Autowired
+    @Qualifier("SalesBillImportFileHandler")
+    private UploadHandler uploadHandler2 = null;
+
     //第一种监听方式Event
     public static void main(String[] args)
     {
@@ -34,9 +44,20 @@ public class SpringApplicationEventTest extends OnlyApplicationTests {
 
     //第二种监听方式Event
     @Test
-    public  void Test(){
+    public  void event2Test(){
         MyEvent event = new MyEvent("1111","哈哈");
         publisher.pubishEvent(event);
+    }
+
+    @Test
+    public void impl2Test() {
+        UploadHandler test = new SalesBillImportFileHandler();
+        String result = test.handleFile();
+        System.out.println("=11="+result);
+
+        System.out.println("=22="+uploadHandler1.handleFile());
+        System.out.println("=33="+uploadHandler2.handleFile());
+
     }
 
 }
