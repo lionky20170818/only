@@ -50,7 +50,8 @@ public class SpringApplicationEventTest extends OnlyApplicationTests {
     }
 
     @Test
-    public void impl2Test() {
+    public void proxy2Test() {
+        //代理设计模式测试
         UploadHandler test = new SalesBillImportFileHandler();
         String result = test.handleFile();
         System.out.println("=11="+result);

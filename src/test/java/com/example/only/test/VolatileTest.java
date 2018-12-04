@@ -62,7 +62,26 @@ public class VolatileTest {
 
 
     public static void main(String[] args) {
+
+        syncSalesBillToEs("11");
         System.out.println(Thread.currentThread().getId()+"=");
+
+    }
+
+    private static void syncSalesBillToEs(String aaaa) {
+        try {
+            switch (aaaa) {
+                case "1":
+                case "2":
+                    System.out.println("222====");
+                    break;
+                default:
+                    System.out.println("333====");
+                    break;
+            }
+        } catch (Exception e) {
+//            logger.error("出现异常",e);
+        }
     }
 
 }
