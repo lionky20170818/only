@@ -1,5 +1,6 @@
 package com.example.only.tools.duoxiancheng;
 
+import java.math.BigDecimal;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
@@ -13,12 +14,12 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class CyclicBarrierTest {
 
-    public static void main(String[] args) {
-        int N = 4;
-        CyclicBarrier barrier  = new CyclicBarrier(N);
-        for(int i=0;i<N;i++)
-            new Writer(barrier).start();
-    }
+//    public static void main(String[] args) {
+//        int N = 4;
+//        CyclicBarrier barrier  = new CyclicBarrier(N);
+//        for(int i=0;i<N;i++)
+//            new Writer(barrier).start();
+//    }
     static class Writer extends Thread{
         private CyclicBarrier cyclicBarrier;
         public Writer(CyclicBarrier cyclicBarrier) {
@@ -40,5 +41,18 @@ public class CyclicBarrierTest {
             System.out.println("所有线程写入完毕，继续处理其他任务...");
         }
     }
+
+
+    public static void main(String[] args) {
+        BigDecimal amount = new BigDecimal("306.825000");
+        BigDecimal qu = new BigDecimal("48.850000");
+        BigDecimal price = new BigDecimal("6.280962128966223");
+        BigDecimal qu2 = amount.divide(qu, 20, BigDecimal.ROUND_HALF_UP);
+        BigDecimal qu3 = price.multiply(qu);
+
+        System.out.println("==="+qu2);
+
+    }
+
 
 }
