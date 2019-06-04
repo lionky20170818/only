@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import javax.annotation.Resource;
+
 /**
  * Author: created by liguoliang
  * Date: 2018/10/23 15:41 41
@@ -30,6 +32,9 @@ public class SpringApplicationEventTest extends OnlyApplicationTests {
     @Autowired
     @Qualifier("SalesBillImportFileHandler")
     private UploadHandler uploadHandler2 = null;
+
+    @Resource(name = "TestHandler")
+    private UploadHandler uploadHandler3 = null;
 
     //第一种监听方式Event
     public static void main(String[] args)
@@ -56,8 +61,25 @@ public class SpringApplicationEventTest extends OnlyApplicationTests {
         String result = test.handleFile();
         System.out.println("=11="+result);
 
+        //方式1：使用注解寻找
         System.out.println("=22="+uploadHandler1.handleFile());
         System.out.println("=33="+uploadHandler2.handleFile());
+        System.out.println("=44="+uploadHandler3.handleFile());
+
+        //方式二：使用list的para寻找
+        //todo
+        /*
+        athena-openapi-service 工程下
+        VehicleBillDataProcessServiceImpl.doPreHandlers()  方法
+        */
+
+        //方式三：使用type寻找
+        //TODO
+        /*
+        athena-openapi-service 工程下
+        OpenSalesBillStatusServiceImpl.billStatusModify(    方法
+        */
+
 
     }
 

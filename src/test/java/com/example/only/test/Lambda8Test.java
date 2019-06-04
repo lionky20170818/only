@@ -43,14 +43,14 @@ public class Lambda8Test extends OnlyApplicationTests {
         System.out.println("str3="+newStrs.get(0));
 
         ParaReq req = new ParaReq();
-        req.setExt1("asd123");
+        req.setExt2("asd123");
         List<ParaReq> paraLists = Lists.newArrayList(req);
         List<String> newLists = paraLists.stream().map(para->{
             return para.getExt1()+"qqq";
         }).collect(Collectors.toList());
-        List<String> newLists0 = paraLists.stream().map(para->para.getExt1()
+        List<String> newLists0 = paraLists.stream().map(para->para.getExt2()
         ).collect(Collectors.toList());
-        List<String> newLists1 = paraLists.stream().map(ParaReq::getExt1
+        List<String> newLists1 = paraLists.stream().map(ParaReq::getExt2
         ).collect(Collectors.toList());
 
         System.out.println("str4="+newLists.get(0));

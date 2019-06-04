@@ -3,12 +3,12 @@ package com.example.only.dto;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
 
 @Data
-public class ParaReq implements Serializable {
-    private String ext1;
-    private String ext2;
-    private String ext3;
-    private String name;
+public class ParaReq extends ParaDTO implements Serializable {
+    private String type100;
 
 }
