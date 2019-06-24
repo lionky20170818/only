@@ -1,10 +1,15 @@
 package com.example.only.test;
 
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
 import com.example.only.OnlyApplicationTests;
+import com.example.only.dto.CommonResponse;
 import com.example.only.dto.ParaReq;
+import com.example.only.dto.TaxCodeConfig;
 import org.assertj.core.util.Lists;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +23,7 @@ public class Lambda8Test extends OnlyApplicationTests {
 
     @Test
     public  void normalTest() {
+
         List strs = Lists.newArrayList("1","2","a","3");
         //快
         strs.parallelStream().forEach(str -> {

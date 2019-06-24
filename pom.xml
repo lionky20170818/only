@@ -113,7 +113,11 @@
             <artifactId>dozer</artifactId>
             <version>5.5.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.5.9</version>
+        </dependency>
 
     </dependencies>
 
