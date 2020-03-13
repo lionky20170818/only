@@ -25,8 +25,8 @@ public class DesUtil {
 		// 一共六个参数,先后顺序不能错，任意一个参数校验失败将无法登录。
 		//String data ="1"; 
 
-		String data = "xforceplus:vendor:qdpy:"+System.currentTimeMillis();
-//		String data = "xforceplus:admin:q1w2e3r4:DA100302:DA100302:"+System.currentTimeMillis();
+		String data = "aaaplus:vendor:qdpy:"+System.currentTimeMillis();
+//		String data = "aaaaplus:admin:q1w2e3r4:DA100302:DA100302:"+System.currentTimeMillis();
 		// 自定义密钥加密
 		String dataEcrypt = encrypt(data, DEFAULT_KEY);
 		System.out.println(dataEcrypt);
