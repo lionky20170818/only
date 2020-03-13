@@ -5,11 +5,9 @@ import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.stereotype.Component;
 
 /**
- * 项目名称: 票易通IMSC
  * 模块名称:
  * 说明:
  * JDK 版本: JDK1.8
- * 作者：liwei
  * 创建日期：2017/3/8
  */
 

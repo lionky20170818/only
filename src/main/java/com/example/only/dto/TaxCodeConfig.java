@@ -3,11 +3,9 @@ package com.example.only.dto;
 import java.io.Serializable;
 
 /**
- * 项目名称: 票易通IMSC
  * 模块名称:
  * 说明:
  * JDK 版本: JDK1.8
- * 作者(@author)：wuhaojie
  * 创建日期：2017/10/18
  */
 public class TaxCodeConfig implements Serializable {
